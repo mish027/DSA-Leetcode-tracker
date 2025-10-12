@@ -5,14 +5,14 @@ class Solution:
             for j in range(i+1,len(numbers)):
                 if numbers[i]+numbers[j]==target:
                     return i+1,j+1'''
-        #approach two: hashMap O(n) TC and SC
+        #approach two: hashMap TC:O(n) and SC:O(n)
         '''hashMap={}
         for i,num in enumerate(numbers):
             diff=target-num
             if diff in hashMap:
                 return hashMap[diff],i+1
             hashMap[num]=i+1'''
-        #optimised approach O(n) TC and O(1) SC
+        #optimised approach TC:O(n) and SC:O(1)
         i=0
         j=len(numbers)-1
 
