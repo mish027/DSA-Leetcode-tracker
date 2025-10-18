@@ -8,11 +8,22 @@ class Solution:
         
         return False'''
 
-        #better bruteforce approach 
+        #better bruteforce approach TC: O(n) SC:O(n)
         set_nums=set(nums)
         if len(set_nums)==len(nums):
             return False
         else:
             return True
+
+        #optimised approach using bit manipulation TC:O(n) SC:O(1)      
+        res=0
+        for num in nums:
+            res=res^num
+        if res==0:
+            return False
+        else:
+            return True 
+        
+
 
         
