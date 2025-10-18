@@ -13,12 +13,7 @@ class Solution:
                     flag=1
                     break
             if flag==0:
-                res.append(-1)
-            
-            
-                
-
-            
+                res.append(-1)    
         return res
 
         
