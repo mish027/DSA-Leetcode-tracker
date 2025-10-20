@@ -5,7 +5,7 @@ class Solution:
         for operation in operations:
 
             if operation[0]=='-':
-                res.append(-(int(operation[1:])))
+                res.append(-int(operation[1:]))
             elif operation.isnumeric():
                 res.append(int(operation))
             elif operation=='C':
