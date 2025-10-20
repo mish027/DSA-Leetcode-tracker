@@ -4,9 +4,9 @@ class Solution:
 
         for operation in operations:
 
-            if operation[0]=='-':
-                res.append(-int(operation[1:]))
-            elif operation.isnumeric():
+            if operation[0]=='-': #isnumeric() works only for positive digits,negatives fail.
+                res.append(-int(operation[1:])) #For negatives:convert string after '-' to int, then negate.
+            elif operation.isnumeric(): 
                 res.append(int(operation))
             elif operation=='C':
                 res.pop()
