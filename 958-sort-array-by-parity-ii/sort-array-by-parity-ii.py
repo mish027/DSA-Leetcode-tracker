@@ -13,6 +13,8 @@ class Solution:
             
             else:
                 nums[i],nums[j]=nums[j],nums[i]
+                i+=2
+                j+=2
         return nums
             
             
