@@ -7,14 +7,15 @@ class Solution:
         curLength=0
         while j<len(nums):
 
-            if nums[j]!=1:
-                
-                curLength=0
+            if nums[j]==1:
+                curLength+=1 
             else:
-                curLength+=1
+                curLength=0
+
+            if curLength>maxLength:
+                    maxLength=curLength     
             j+=1
-            
-            maxLength=max(maxLength,curLength) 
+
         return maxLength
 
         
