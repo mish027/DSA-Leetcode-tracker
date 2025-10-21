@@ -3,16 +3,13 @@ class Solution:
         """
         Do not return anything, modify arr in-place instead.
         """
-        res=[]
-        for num in arr:
-            if num!=0:
-                res.append(num)
+        i=0
+        while i<len(arr):
+            if arr[i]==0:
+                arr.insert(i,0)
+                i+=2
+                arr.pop()
             else:
-                res.append(0)
-                res.append(0)
-                
-        
-        for i in range(len(arr)):
-            arr[i]=res[i]
+                i+=1
 
         
