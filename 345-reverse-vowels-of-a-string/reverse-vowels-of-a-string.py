@@ -11,12 +11,9 @@ class Solution:
                 s[i],s[j]=s[j],s[i]
                 i+=1
                 j-=1
-            elif s[i] in vowels:
-                j-=1
-            elif s[j] in vowels:
+            elif s[i] not in vowels:
                 i+=1
-            else:
-                i+=1
+            elif s[j] not in vowels:
                 j-=1
         return "".join(s)
             
