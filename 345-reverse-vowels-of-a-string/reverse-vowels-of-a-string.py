@@ -15,6 +15,7 @@ class Solution:
                 i+=1
             elif s[j] not in vowels:
                 j-=1
+                
         return "".join(s)
             
             
