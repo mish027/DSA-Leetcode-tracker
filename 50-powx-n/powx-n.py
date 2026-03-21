@@ -9,12 +9,10 @@ class Solution:
                 if n%2==0:
                     return half*half
                 else:
-                    return x*half*half
-             
+                    return x*half*half     
         if n<0:
             x=1/x
             n=-n
-        
         return powerFun(x,n)
 
         
