@@ -1,6 +1,7 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
 
+
         myStack1 = []
         myStack2= []
         for ch in s:
