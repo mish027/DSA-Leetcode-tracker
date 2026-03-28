@@ -18,4 +18,8 @@ class Solution:
         return -1
             
 
-        
+        #mistake:
+        '''initislaised low = nums[0]
+        low = 0
+        high = k-1
+        return -1 if not found'''
