@@ -10,8 +10,6 @@ class Solution:
 
         k=len(myStack)
         for i in range(k):
-
-            if myStack:
                 s[i]=myStack.pop()
         return s
 
