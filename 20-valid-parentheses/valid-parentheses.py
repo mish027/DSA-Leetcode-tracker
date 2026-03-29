@@ -3,6 +3,20 @@ class Solution:
 
         myDict = {')':'(', '}':'{',']':'['}
         myStack = []
+        
+        for ch in s:
+            if ch in myDict.values():
+                myStack.append(ch)
+            else:
+                if not myStack or myStack.pop()!=myDict[ch]:
+                    return False
+        return len(myStack)==0
+
+        
+        
+        
+        '''myDict = {')':'(', '}':'{',']':'['}
+        myStack = []
         for ch in s:
             if ch in myDict.values():
                 myStack.append(ch)
@@ -11,8 +25,11 @@ class Solution:
                     myStack.pop()
                 else:
                     return False
-        return len(myStack)==0
+        return len(myStack)==0'''
 
         #take edge case s = "]"
+
+    
+
 
         
