@@ -2,11 +2,11 @@ class MinStack:
 
     def __init__(self):
         self.myStack = []
-        self.topV = -1     
+          
 
     def push(self, val: int) -> None:
 
-            self.topV +=1
+            
             if not self.myStack:
                 self.myStack.append((val,val))
             else:
@@ -22,11 +22,11 @@ class MinStack:
     def pop(self) -> None:
 
         self.myStack.pop()
-        self.topV-=1
+        
           
     def top(self) -> int:
 
-        return self.myStack[self.topV][0]
+        return self.myStack[-1][0]
         
 
     def getMin(self) -> int:
@@ -63,3 +63,4 @@ You append (val, val) ✅
 Then you continue execution ❌
 minV becomes the same value
 You append again ❌'''
+#topV is unneccery basically
