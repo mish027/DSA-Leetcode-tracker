@@ -1,29 +1,41 @@
 class MinStack:
 
     def __init__(self):
-        self.stack = [0]*30000
-        self.minStack = [0]*30000
-        self.topV = -1
-        self.minTop = -1
+        self.myStack = []
+        self.topV = -1     
 
     def push(self, val: int) -> None:
-        self.topV += 1
-        self.stack[self.topV] = val
 
-        if self.minTop == -1 or val <= self.minStack[self.minTop]:
-            self.minTop += 1
-            self.minStack[self.minTop] = val
+            self.topV +=1
+            if not self.myStack:
+                self.myStack.append((val,val))
+            else:
+                minV=self.myStack[-1][1]
+
+                if val<minV:
+                    self.myStack.append((val,val))
+                else:
+                    self.myStack.append((val,minV))
+        
+        
 
     def pop(self) -> None:
-        if self.stack[self.topV] == self.minStack[self.minTop]:
-            self.minTop -= 1
-        self.topV -= 1
 
+        self.myStack.pop()
+        self.topV-=1
+          
     def top(self) -> int:
-        return self.stack[self.topV]
+
+        return self.myStack[self.topV][0]
+        
 
     def getMin(self) -> int:
-        return self.minStack[self.minTop]
+
+        return self.myStack[-1][1]
+
+        
+
+        
 
 
 # Your MinStack object will be instantiated and called as such:
@@ -32,3 +44,22 @@ class MinStack:
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+#minV=self.myStack[-1][1] push fails when stack is empty
+#return self.myStack.pop()[1] should no pop and not modify
+'''if not self.myStack:
+                self.myStack.append((val,val))
+
+            minV=self.myStack[-1][1]
+
+            if val<minV:
+                self.myStack.append((val,val))
+            else:
+                self.myStack.append((val,minV))
+
+    What happens when stack is empty?
+
+You append (val, val) ✅
+Then you continue execution ❌
+minV becomes the same value
+You append again ❌'''
