@@ -16,9 +16,7 @@ class MinStack:
                 '''if val<minV:
                     self.myStack.append((val,val))
                 else:
-                    self.myStack.append((val,minV))'''
-        
-        
+                    self.myStack.append((val,minV))'''  
 
     def pop(self) -> None:
 
@@ -29,7 +27,6 @@ class MinStack:
 
         return self.myStack[-1][0]
         
-
     def getMin(self) -> int:
 
         return self.myStack[-1][1]
