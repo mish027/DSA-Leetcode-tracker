@@ -11,11 +11,12 @@ class MinStack:
                 self.myStack.append((val,val))
             else:
                 minV=self.myStack[-1][1]
+                self.myStack.append(min((val,val),(val,minV)))
 
-                if val<minV:
+                '''if val<minV:
                     self.myStack.append((val,val))
                 else:
-                    self.myStack.append((val,minV))
+                    self.myStack.append((val,minV))'''
         
         
 
