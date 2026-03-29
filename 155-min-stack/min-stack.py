@@ -1,4 +1,4 @@
-class MinStack:
+'''class MinStack:
 
     def __init__(self):
         self.myStack = []
@@ -13,10 +13,10 @@ class MinStack:
                 minV=self.myStack[-1][1]
                 self.myStack.append(min((val,val),(val,minV)))
 
-                '''if val<minV:
+                if val<minV:
                     self.myStack.append((val,val))
                 else:
-                    self.myStack.append((val,minV))'''  
+                    self.myStack.append((val,minV))  
 
     def pop(self) -> None:
 
@@ -29,12 +29,7 @@ class MinStack:
         
     def getMin(self) -> int:
 
-        return self.myStack[-1][1]
-
-        
-
-        
-
+        return self.myStack[-1][1]'''
 
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
@@ -62,3 +57,35 @@ Then you continue execution ❌
 minV becomes the same value
 You append again ❌'''
 #topV is unneccery basically
+
+
+# using 2 stacks
+class MinStack:
+
+    def __init__(self):
+        self.myStack = []
+        self.myMinstack = []
+          
+
+    def push(self, val: int) -> None:
+
+                self.myStack.append(val)
+                if self.myMinstack:
+                    self.myMinstack.append(min(val,self.myMinstack[-1]))
+                else:
+                    self.myMinstack.append(val)
+
+
+    def pop(self) -> None:
+
+        self.myStack.pop()
+        self.myMinstack.pop()
+        
+          
+    def top(self) -> int:
+
+        return self.myStack[-1]
+        
+    def getMin(self) -> int:
+
+        return self.myMinstack[-1]
