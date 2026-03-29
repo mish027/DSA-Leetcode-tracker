@@ -8,7 +8,9 @@ class Solution:
             if ch in myDict.values():
                 myStack.append(ch)
             else:
-                if not myStack or myStack.pop()!=myDict[ch]:
+                if not myStack:
+                    return False
+                if myStack.pop()!=myDict[ch]:
                     return False
         return len(myStack)==0
 
