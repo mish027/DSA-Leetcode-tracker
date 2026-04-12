@@ -8,8 +8,7 @@ class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
         #approach 3: fast & slow pointer
-
-        slow=head
+        '''slow=head
         fast=head
 
         while fast and fast.next:
@@ -20,7 +19,7 @@ class Solution:
         return False
 
         #approach 2: using some value to mark prev nodes
-        '''temp=head
+        temp=head
         while temp:
 
             if temp.val!=float('-Inf'):
@@ -29,4 +28,16 @@ class Solution:
                 return True
             temp=temp.next
         return False'''
+        
+        #approach 1: using hashSet
+
+        hashSet=set()
+        temp=head
+        while temp:
+            if temp in hashSet:
+                return True
+            hashSet.add(temp)
+            temp=temp.next
+        return False
+
         
