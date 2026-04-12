@@ -7,7 +7,21 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
-        temp=head
+        #approach 3: fast & slow pointer
+
+        slow=head
+        fast=head
+
+        while fast and fast.next:
+            
+            slow=slow.next
+            fast=fast.next.next
+            if fast==slow:
+                return True
+        return False
+
+        #approach 2: using some value to mark prev nodes
+        '''temp=head
         while temp:
 
             if temp.val!=float('-Inf'):
@@ -15,5 +29,5 @@ class Solution:
             else:
                 return True
             temp=temp.next
-        return False
+        return False'''
         
